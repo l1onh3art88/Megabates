@@ -32,3 +32,4 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'open_uri_redirections'
+

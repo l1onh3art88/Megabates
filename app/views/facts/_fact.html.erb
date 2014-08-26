@@ -1,0 +1,12 @@
+<%= content_tag :div, class: 'media', id: "fact-#{fact.id}" do %>
+  <%= link_to '#', class: 'pull-left' do %>
+    <%= image_tag(fact.user.avatar.small.url) if fact.user.avatar? %>
+  <% end %>
+  <div class="media-body">
+    <small>
+      <%= fact.user.name %> posted <%= time_ago_in_words(fact.created_at) %> ago
+  	</small>
+  	<h1><%= fact.opinion %></h1>
+  	<p><%= fact.citation %></p>
+  </div>
+<% end %>

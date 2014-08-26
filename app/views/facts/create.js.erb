@@ -1,0 +1,6 @@
+<% if @fact.valid? %>
+	$('.js-facts').prepend("<%= escape_javascript(render(@fact)) %> ");
+	$('.new-fact').html("<%= escape_javascript(render partial: 'facts/form', locals: { fact: @fact}) %>");
+<% else %>
+	$('.new-fact').html("<%= escape_javascript(render partial: 'facts/form', locals: { fact: @fact}) %>");
+<% end %>
