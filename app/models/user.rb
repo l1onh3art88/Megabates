@@ -10,7 +10,10 @@ class User < ActiveRecord::Base
 
   validates_format_of :email, :without => TEMP_EMAIL_REGEX, on: :update
   mount_uploader :avatar, AvatarUploader
+  def already_posted?(topic)
+    self.facts.where(topic_id: topic.id).first.present?
 
+  end
   def self.find_for_oauth(auth, signed_in_resource = nil)
 
     # Get the identity and user if they exist

@@ -5,8 +5,9 @@ class WelcomeController < ApplicationController
 	end
 
 	def show
-		@fact = Fact.new
-		@facts = Fact.all
+    @topic = Topic.first
+		@fact = Fact.first
+    @facts = Fact.all
 	end
 	
 end

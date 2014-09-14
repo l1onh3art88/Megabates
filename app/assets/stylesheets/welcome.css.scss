@@ -42,18 +42,17 @@
 
 .carousel-control .glyphicon-chevron-left,
 .carousel-control .icon-prev {
+    padding-left: 20px;
 	left: 0;
 }
 
 .carousel-control .glyphicon-chevron-right,
 .carousel-control .icon-next {
+    padding-right: 50px;
 	right: 0;
 }
 
-.carousel-control.left span,
-.carousel-control.right span {
-	background-color: #000;
-}
+
 
 .carousel-control.left span:hover,
 .carousel-control.right span:hover {
@@ -117,8 +116,9 @@
     width: 300px;
 
 }
-.js-facts {
-    position: fixed;
-    left: 200px;
-    top: 550px;
+.pro-button:active {
+    
+}
+.media.well {
+    width: 500px;
 }

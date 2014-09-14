@@ -32,4 +32,6 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'figaro'
 gem 'open_uri_redirections'
+gem "hiredis", "~> 0.4.0"
+gem "redis", ">= 2.2.0", require: ["redis", "redis/connection/hiredis"]
 

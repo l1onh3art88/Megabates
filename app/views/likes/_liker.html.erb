@@ -1,0 +1,11 @@
+
+<div class= "vote-arrows pull-left">
+  <% if user_signed_in? && Likes.new(current_user, fact).user_liked_fact? %>
+    <div><%= link_to " ", fact_like_path( fact, fact.id), method: :delete, class: 'glyphicon glyphicon-thumbs-down' %></div>
+  <% else %>
+      <div><%= link_to " ", fact_likes_path( fact), method: :post, class: 'glyphicon glyphicon-thumbs-up' %></div>
+    <% end %>
+  <div class="well text-center">
+    <strong><%= Likes.new(current_user, fact).fact_likes_count %></strong>
+  </div>
+ </div>

@@ -57,19 +57,30 @@
   		    	<span class="glyphicon glyphicon-chevron-right"></span>
   			</a>
   		</div><!-- /carousel -->
-        <div class = "pro-button">
-          <button type= "button" class= "btn btn-success btn-lg">Pro</button>
+  <div class="row well">
+        <div class="col-md-6 text-center">
+          <button type= "button" id="pro_button" class= "btn btn-success btn-lg">I agree, i'd like to write a pro</button>
         </div>
-        <div class  = "con-button">
-          <button type = "button" class = "btn btn-danger btn-lg">Con</button>
+        <div class="col-md-6 text-center">
+          <button type = "button" id="con_button" class = "btn btn-danger btn-lg">Absolutely no! I'd like to write a con</button>
         </div>
-    		<div class = "row">
-    			<div class= "js-facts">
-    				<%= render partial: 'facts/fact', collection: @facts %>
+        <div class="clearfix"></div>
+        <div id="new-fact" class="hide">
+          <%= render partial: 'facts/form', locals: {fact: Fact.new} %>
+        </div>
+  </div>
+    		<div class="col-md-6 text-center">
+    			<div id= "js-facts">
+            
+    				<%= render partial: 'facts/fact', collection: @topic.facts.pro %>
     			</div>
-    			<div class= "new-fact">
-    			<%= render partial: 'facts/form', locals: {fact: @fact} %>
-    			</div>
-    		</div>
+        </div> 
+        <div class="col-md-6 text-center">
+          <div id= "js-facts">
+            
+            <%= render partial: 'facts/fact', collection: @topic.facts.con %>
+          </div>
+        </div>    			
+    		
 	</div>
 </div>

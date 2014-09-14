@@ -16,3 +16,18 @@
 //= require_tree .
 //= require bootstrap
 
+$(document).ready(function(e){
+  $("#pro_button").on("click", function(e){
+    e.preventDefault();
+    $("#new-fact").removeClass("hide");
+    $("#new-fact").fadeIn("slow")
+    $("#fact_lean").val(1)
+   
+  })
+  $("#con_button").on("click", function(e){
+    e.preventDefault();
+    $("#new-fact").removeClass("hide");
+    $("#new-fact").fadeIn("slow")
+    $("#fact_lean").val(0)
+  })
+});

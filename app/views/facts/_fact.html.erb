@@ -1,4 +1,6 @@
-<%= content_tag :div, class: 'media', id: "fact-#{fact.id}" do %>
+
+<%= content_tag :div, class: 'media well', id: "fact-#{fact.id}" do %>
+  <%= render partial: 'likes/liker', locals: { fact: fact } %>
   <%= link_to '#', class: 'pull-left' do %>
     <%= image_tag(fact.user.avatar.small.url) if fact.user.avatar? %>
   <% end %>

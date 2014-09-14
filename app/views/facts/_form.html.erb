@@ -1,4 +1,4 @@
-<%= form_for [@facts.build], remote: true do |f| %>
+<%= form_for [fact], remote: true do |f| %>
 	<% if fact.errors.any? %>
 		<div class="alert alert-danger">
 		    <h4>There are <%= pluralize(fact.errors.count, "error") %>.</h4>
@@ -16,10 +16,16 @@
 	</div>
 	<% end %>
 	<%= form_group_tag(fact.errors[:citation]) do %>
-	<div class= "form-group"
+	<div class= "form-group">
 		<%= f.label :citation %>
 		<%= f.text_field :citation, class: 'form-control', placeholder: "Cite your fact with a URL if available" %>
 	</div>
+	<% end %>
+	<%= form_group_tag(fact.errors[:lean]) do %>
+		<%= f.hidden_field :lean %>
+	<% end %>
+	<%= form_group_tag(fact.errors[:topic_id]) do %>
+		<%= f.hidden_field :topic_id, value: @topic.id %>
 	<% end %>
 	<div class = "form-group">
 		<%= f.submit "Submit", class: 'btn btn-success' %>
