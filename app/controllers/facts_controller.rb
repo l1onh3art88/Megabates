@@ -5,7 +5,7 @@ class FactsController < ApplicationController
 
 	def create
 
-		
+		current_user = User.first
 		@fact = current_user.facts.build(fact_params)	
 		@new_fact = Fact.new
 		authorize @fact
