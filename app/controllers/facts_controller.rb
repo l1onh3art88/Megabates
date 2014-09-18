@@ -1,21 +1,21 @@
 
 class FactsController < ApplicationController
 	respond_to :html, :js
-	# before_filter :authenticate_user!
+	before_filter :authenticate_user!, only: [:create]
 
 	def create
 
-		current_user=User.first
+		
 		@fact = current_user.facts.build(fact_params)	
 		@new_fact = Fact.new
 		authorize @fact
 		if current_user.already_posted?(@fact.topic)
-			flash[:notice] = "You have already posted today, come back tomorrow to express your opinion"
+			 flash.keep[:error] = "You have already posted today, come back tomorrow to express your opinion"
 		else
 			if @fact.save
-				flash[:notice] = "Your opinion has been added."
+				flash.keep[:notice] = "Your opinion has been added."
 			else
-				flash[:error] = "Error creating your opinion. Please Try Again."
+				flash.keep[:error] = "Error creating your opinion. Please Try Again."
 			end
 		end
 		redirect_to root_url
