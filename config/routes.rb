@@ -1,5 +1,6 @@
 Megabates::Application.routes.draw do
   devise_for :users, :controllers => { omniauth_callbacks: 'omniauth_callbacks' } 
+  resources :topics
     resources :facts do 
       resources :likes, only: [:create, :destroy] 
     end 

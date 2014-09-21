@@ -2,7 +2,7 @@
 class FactsController < ApplicationController
 	respond_to :html, :js
 	before_filter :authenticate_user!, only: [:create]
-
+	
 	def create
 
 		current_user = User.first
